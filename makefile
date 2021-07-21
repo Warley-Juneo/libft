@@ -1,42 +1,43 @@
-SRC		:=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-			ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c \
-			ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
-			ft_isdigit.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-			ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c ft_substr.c \
-			ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-			ft_lstmap.c ft_dfree.c ft_isspace.c ft_intlen.c ft_range.c \
-			ft_abs.c ft_atoll.c \
+#SRCS    = $(wildcard ./srcs/ft_*.c)
 
-OBJS    :=	$(SRC:.c=.o)
+#to compile the library
+#gcc -Wall -Wextra - Werror -c ft* && ar rc libft.a *.o
 
-NAME	:=	libft.a
-RLIB    :=	ranlib
-CC		:=	clang
-LIB		:=	ar rcs
+#to compile the file with the library and includes
+#gcc -Wall -Wextra -Werror main.c -L. -lft -I ./includes/libft.h
 
-CFLAGS	+=	-Wall -Wextra -Werror
-RM		:=	rm -rf
+#to use the libft.a in compilation with your main
+# ????
 
+SOURCES    = ${wildcard *.c}
 
+OBJECTS    = ${SOURCES:.c=.o}
 
-all:		$(NAME)
+INCLUDE    = ${wildcard *.h}
+
+NAME    = libft.a
+
+CC        = clang
+AR        = ar
+RM        = rm -f
+
+CFLAGS    = -Wall -Wextra -Werror
+ARFLAGS    = rc
+
+INDEX    = ranlib ${NAME}
 
 .c.o:
-			$(CC) $(CFLAGS) -c $< -o $@
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):	$(OBJS)
-			$(LIB) $(NAME) $(OBJS)
-			$(RLIB) $(NAME)
+all:    ${OBJECTS}
+		${AR} ${ARFLAGS} ${NAME} ${OBJECTS}
 
 clean:
-			$(RM) $(OBJS)
+		${RM} ${OBJECTS}
 
-fclean: 	clean
-			$(RM) $(NAME)
+fclean:		clean
+			${RM} ${NAME}
 
-re: 		fclean all
+re:			fclean all
 
-.PHONY: 	all clean fclean re
+.PHONY:		all clean fclean re
