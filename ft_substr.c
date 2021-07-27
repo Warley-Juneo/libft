@@ -5,7 +5,6 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *substring_ptr;
 	size_t 	i;
-	size_t	srclen;
 
 	i = 0;
 	if (!s || start + len > ft_strlen(s))
