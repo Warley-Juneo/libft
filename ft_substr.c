@@ -8,13 +8,6 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	srclen;
 
 	i = 0;
-	if (!s)
-        return (NULL);
-	srclen = ft_strlen(s) + 1;
-	if (start >= srclen)
-        len = 0;
-    else
-        len += 1;
 	if (!s || start + len > ft_strlen(s))
 	{
         substring_ptr = malloc(1);
