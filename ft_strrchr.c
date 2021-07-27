@@ -3,13 +3,17 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*result;
+	size_t	n;
 
-	result = (char *)str + ft_strlen(str);
-	while (result >= str)
+	n = ft_strlen(str);
+	result = (char *)str + n;
+	while (n--)
 	{
-		if (*result == c)
+		if (*result == (char)c)
 			return (result);
 		result--;
 	}
+	if (*result == (char )c)
+		return (result);
 	return (NULL);
 }

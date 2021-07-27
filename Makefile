@@ -1,14 +1,3 @@
-#SRCS    = $(wildcard ./srcs/ft_*.c)
-
-#to compile the library
-#gcc -Wall -Wextra - Werror -c ft* && ar rc libft.a *.o
-
-#to compile the file with the library and includes
-#gcc -Wall -Wextra -Werror main.c -L. -lft -I ./includes/libft.h
-
-#to use the libft.a in compilation with your main
-# ????
-
 SOURCES    = ${wildcard *.c}
 
 OBJECTS    = ${SOURCES:.c=.o}
@@ -25,6 +14,11 @@ CFLAGS    = -Wall -Wextra -Werror
 ARFLAGS    = rc
 
 INDEX    = ranlib ${NAME}
+
+
+# so:
+# 	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
+#  	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
