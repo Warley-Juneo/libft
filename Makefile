@@ -17,8 +17,8 @@ INDEX    = ranlib ${NAME}
 
 
 # so:
-# 	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
-#  	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+#  	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
+#   	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
