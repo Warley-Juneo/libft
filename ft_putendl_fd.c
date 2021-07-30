@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/29 15:48:33 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 15:48:34 by wjuneo-f         ###   ########.fr       */
+/*   Created: 2021/07/29 03:00:54 by wjuneo-f          #+#    #+#             */
+/*   Updated: 2021/07/29 20:14:36 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	while (n--)
-		*(char *)s++ = '\0';
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

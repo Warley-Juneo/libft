@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/29 15:48:33 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 15:48:34 by wjuneo-f         ###   ########.fr       */
+/*   Created: 2021/07/29 03:01:01 by wjuneo-f          #+#    #+#             */
+/*   Updated: 2021/07/29 03:01:02 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (n--)
-		*(char *)s++ = '\0';
+	write(fd, &c, 1);
 }

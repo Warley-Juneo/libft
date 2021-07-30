@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/29 15:50:11 by wjuneo-f          #+#    #+#              #
+#    Updated: 2021/07/29 20:17:57 by wjuneo-f         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SOURCES    = ${wildcard *.c}
 
 OBJECTS    = ${SOURCES:.c=.o}
@@ -16,9 +28,9 @@ ARFLAGS    = rc
 INDEX    = ranlib ${NAME}
 
 
-# so:
-#  	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
-#   	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+so:
+	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
+	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
