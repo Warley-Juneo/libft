@@ -6,7 +6,7 @@
 #    By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 15:50:11 by wjuneo-f          #+#    #+#              #
-#    Updated: 2021/08/02 18:23:37 by wjuneo-f         ###   ########.fr        #
+#    Updated: 2021/08/03 19:10:06 by wjuneo-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC        = clang
 AR        = ar
 RM        = rm -f
 
-CFLAGS    = -Wall -Wextra -Werror
+CFLAGS    = -g -Wall -Wextra -Werror
 ARFLAGS    = rc
 
 INDEX    = ranlib ${NAME}

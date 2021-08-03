@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:50:00 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/02 22:47:48 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/03 19:15:54 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 
 char	*ft_strtrim(char const *s1, char const *set);
 
-char	**ft_strsplit(char const *s, char c);
+char 	**ft_split(char const *s, char c);
 
 char	*ft_itoa(int n);
 
