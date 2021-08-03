@@ -1,5 +1,27 @@
 #include "libft.h"
 
+static int
+	ft_count_digit(int n)
+{
+	int	count;
+
+	count = 0;
+	while (n != 0)
+	{
+		count++;
+		n = n / 10;
+	}
+	return (count + 1);
+}
+
+static int
+	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
+
 static void
 	ft_rev(char *str)
 {
@@ -9,8 +31,6 @@ static void
 
 	length = ft_strlen(str) - 1;
 	i = 0;
-	if (str[i] == '-')
-		i++;
 	while (str[i] && i < length)
 	{
 		tmp = str[i];
@@ -25,23 +45,24 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	count;
+	size_t	is_neg;
+	size_t	count_digit;
 
+	count_digit = ft_count_digit(n);
+	is_neg = (n < 0);
 	if (n == 0)
-		return (ft_strdup(""));
-	str = ft_calloc(sizeof(*str), 11);
+		return (ft_strdup("0"));
+	str = ft_calloc(count_digit + is_neg, sizeof(char));
 	if (!str)
 		return (NULL);
 	count = 0;
 	while (n != 0)
 	{
-		if (n < 0)
-		{
-			str[count++] = '-';
-			n *= -1;
-		}
-		str[count++] = '0' + n % 10;
-		n = n / 10;
+		str[count++] = '0' + ft_abs(n % 10);
+		n = (n / 10);
 	}
+	if (is_neg)
+		str[count] = '-';
 	ft_rev(str);
 	return (str);
 }

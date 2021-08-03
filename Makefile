@@ -6,7 +6,7 @@
 #    By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/29 15:50:11 by wjuneo-f          #+#    #+#              #
-#    Updated: 2021/07/29 20:17:57 by wjuneo-f         ###   ########.fr        #
+#    Updated: 2021/08/02 18:23:37 by wjuneo-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ ARFLAGS    = rc
 INDEX    = ranlib ${NAME}
 
 
-so:
-	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
-	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+# so:
+# 	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

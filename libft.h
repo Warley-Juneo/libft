@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:50:00 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 15:50:01 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/02 22:47:48 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,27 +82,7 @@ int		ft_toupper(int c);
 
 int		ft_tolower(int c);
 
-void	*ft_memalloc(size_t size);
-
-void	ft_memdel(void **ap);
-
-char	*ft_strnew(size_t size);
-
-void	ft_strdel(char **as);
-
-void	ft_strclr(char *s);
-
-void	ft_striter(char *s, void (*f)(char *));
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-
-char	*ft_strmap(char const *s, char (*f)(char));
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
-int		ft_strequ(char const *s1, char const *s2);
-
-int		ft_strnequ(char const *s1, char const *s2, size_t n);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
@@ -130,40 +110,18 @@ void	ft_putendl_fd(char *s, int fd);
 
 void 	ft_putnbr_fd(int n, int fd);
 
-t_list	*ft_lstnew(void const *content, size_t content_size);
-
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-
-void	ft_lstadd(t_list **alst, t_list *new);
-
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-
 int		ft_isupper(int c);
 
 int		ft_islower(int c);
 
 int		ft_isspace(int c);
 
-int		ft_isblank(int c);
-
 size_t	ft_strnlen(const char *s, size_t maxlen);
 
 char	*ft_strndup(const char *s1, size_t n);
 
-void	ft_lstaddback(t_list **alst, t_list *new);
+char	ft_mapi_uppercase (unsigned int i, char str);
 
-char	*ft_strlwr(char *s);
-
-char	*ft_strupr(char *s);
-
-char	*ft_strrev(char *s);
-
-char	*ft_strchrs(const char *s, int c);
-
-char	*ft_strsubchr(const char *s, char c);
+void	ft_mapi_lowercase (unsigned int i, char *str);
 
 #endif
