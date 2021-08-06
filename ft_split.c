@@ -1,64 +1,71 @@
 #include "libft.h"
-#include <stdio.h>
 
 static size_t
-	count_splits(char *s, char c)
+	add_string(char const *s, char c)
 {
+	size_t	end;
+
+	end = 0;
+	while (s[end] && s[end] != c)
+		end++;
+	return (end);
+}
+
+static char	**free_malloc(char **result, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < size)
+		free(result[i++]);
+	free(result);
+	return (NULL);
+}
+
+static size_t
+	count_splits(char const *s, char c)
+{
+	size_t	i;
 	size_t	splits;
 
 	splits = 0;
-	while(*s)
-	{
-		if(*s == c)
-		{
-			s++;
-			splits++;
-		}
+	i = 0;
+	while (*s && *s == c)
 		s++;
+	while (s[i])
+	{
+		if (!i)
+			splits++;
+		else if (s[i - 1] == c && s[i] != c)
+			splits++;
+		i++;
 	}
 	return (splits);
 }
 
-static size_t
-	count_string(char *s, char c)
-{
-	size_t	count;
-
-	count = 0;
-	while(*s)
-	{
-		if(*s && *s != c)
-		{
-			s++;
-			count++;
-		}
-		else
-			return (count + 1);
-	}
-	return (count + 1);
-}
-
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	size_t	t_malloc;
+	size_t	splits;
 	size_t	i;
-	char	*cpy_s;
+	size_t	end;
 
-	t_malloc = count_splits((char *)s, c);
-	result = ft_calloc(sizeof(char *), (ft_strlen(s) - t_malloc + 1));
-	if(!result)
+	splits = count_splits(s, c);
+	result = malloc(sizeof(char *) * (splits + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
-	cpy_s = (char *)s;
-	while (t_malloc + 1 > 0)
+	while (i < splits)
 	{
-		result[i] = ft_calloc(sizeof(char *), count_string(cpy_s, c));
-		ft_strlcpy(result[i], cpy_s, count_string(cpy_s, c));
-		cpy_s = cpy_s + count_string(cpy_s, c);
+		while (*s && *s == c)
+			s++;
+		end = add_string(s, c);
+		result[i] = ft_substr(s, 0, end);
+		if (!result[i])
+			return (free_malloc(result, i));
+		s += end + 1;
 		i++;
-		t_malloc--;
 	}
-	result[i] = NULL;
+	result[splits] = NULL;
 	return (result);
 }

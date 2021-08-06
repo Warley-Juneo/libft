@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:50:00 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/03 19:15:54 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/06 17:09:38 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
 char	*ft_strtrim(char const *s1, char const *set);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char 	**ft_split(char const *s, char c);
 
