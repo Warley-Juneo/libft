@@ -6,14 +6,14 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:48:36 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 15:48:37 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/06 18:10:20 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void 	*ft_calloc(size_t nelem, size_t size)
+void	*ft_calloc(size_t nelem, size_t size)
 {
 	void	*result;
 
