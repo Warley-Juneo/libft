@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:50:00 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/06 17:09:38 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/09 21:07:58 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,11 @@ char	*ft_strndup(const char *s1, size_t n);
 char	ft_mapi_uppercase (unsigned int i, char str);
 
 void	ft_mapi_lowercase (unsigned int i, char *str);
+
+t_list *ft_lstnew(void *content);
+
+void ft_lstadd_front(t_list **lst, t_list *new);
+
+t_list *ft_lstlast(t_list *lst);
 
 #endif
