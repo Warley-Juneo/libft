@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:50:00 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/09 21:07:58 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/10 03:40:01 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,10 @@ t_list *ft_lstnew(void *content);
 
 void ft_lstadd_front(t_list **lst, t_list *new);
 
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
 t_list *ft_lstlast(t_list *lst);
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 #endif
