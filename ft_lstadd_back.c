@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 03:42:33 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/10 21:26:41 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/11 00:35:45 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (lst == NULL)
+	if (*lst == NULL)
 		*lst = new;
 	else
 	{

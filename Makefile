@@ -5,45 +5,55 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/29 15:50:11 by wjuneo-f          #+#    #+#              #
-#    Updated: 2021/08/03 19:10:06 by wjuneo-f         ###   ########.fr        #
+#    Created: 2021/08/10 22:33:32 by wjuneo-f          #+#    #+#              #
+#    Updated: 2021/08/10 22:33:33 by wjuneo-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES    = ${wildcard *.c}
+SOURCES			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c
+SOURCES			+=	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
+SOURCES			+=	ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c
+SOURCES			+=	ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c
+SOURCES			+=	ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c
+SOURCES			+=	ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c
+SOURCES			+=	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c
+SOURCES			+=	ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
+SOURCES			+=	ft_tolower.c ft_toupper.c
 
-OBJECTS    = ${SOURCES:.c=.o}
+SOURCES_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+SOURCES_BONUS	+=	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+SOURCES_BONUS	+=	ft_lstmap.c
 
-INCLUDE    = ${wildcard *.h}
+OBJECTS			= 	$(SOURCES:.c=.o)
 
-NAME    = libft.a
+OBJECTS_BONUS	= 	$(SOURCES_BONUS:.c=.o)
 
-CC        = clang
-AR        = ar
-RM        = rm -f
+NAME			=	libft.a
 
-CFLAGS    = -g -Wall -Wextra -Werror
-ARFLAGS    = rc
+CC				=	clang
+AR				=	ar
+RM				=	rm -f
 
-INDEX    = ranlib ${NAME}
-
-
-# so:
-# 	$(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+CFLAGS			=	-Wall -Wextra -Werror
+ARFLAGS 		=	rcs
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-all:    ${OBJECTS}
-		${AR} ${ARFLAGS} ${NAME} ${OBJECTS}
+all:			$(NAME)
+
+$(NAME):		$(OBJECTS)
+				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
+
+bonus:			$(NAME) $(OBJECTS_BONUS)
+				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS_BONUS)
 
 clean:
-		${RM} ${OBJECTS}
+				$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
-fclean:		clean
-			${RM} ${NAME}
+fclean:			clean
+				$(RM) $(NAME)
 
-re:			fclean all
+re:				fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:			all clean fclean re bonus
