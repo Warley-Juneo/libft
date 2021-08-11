@@ -6,20 +6,21 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 03:45:24 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/10 03:45:25 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/10 08:59:39 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+
 
 int main(void)
 {
-	t_list	*lst;
-	t_list	*add_front;
+	char nome[20];
+	char sobrenome[20];
 
-	lst = ft_lstnew("cafe");
-	add_front = ft_lstnew("cha");
-	ft_lstadd_front(&lst, add_front);
+	printf("sla\n");
+	scanf("%s%s", nome, sobrenome);
 
-	printf("%s", lst->content);
+	printf("%s %s", nome, sobrenome);
 }
