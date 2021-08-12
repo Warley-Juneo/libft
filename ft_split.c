@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 03:43:49 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/10 03:43:50 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/11 19:57:47 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	end;
 
+	if (!s)
+		return (NULL);
 	splits = count_splits(s, c);
 	result = malloc(sizeof(char *) * (splits + 1));
 	if (!result)

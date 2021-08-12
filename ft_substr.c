@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:55:25 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 03:04:57 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/11 19:41:01 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	str_len;
 	size_t	max_size;
 
+	if (!s)
+		return (NULL);
 	str_len = ft_strlen((char *)s);
 	if (start < str_len)
 		max_size = ft_mim(ft_strlen(s + start), len);

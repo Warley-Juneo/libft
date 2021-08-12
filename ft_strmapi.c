@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 03:44:34 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/08/10 03:44:35 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/11 20:01:18 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!string)
 		return (ft_strdup(""));
 	i = 0;
-	while (i < s_len)
+	while (s[i])
 	{
 		string[i] = f(i, s[i]);
 		i++;

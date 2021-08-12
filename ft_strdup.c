@@ -6,7 +6,7 @@
 /*   By: wjuneo-f <wjuneo-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 15:49:23 by wjuneo-f          #+#    #+#             */
-/*   Updated: 2021/07/29 15:49:24 by wjuneo-f         ###   ########.fr       */
+/*   Updated: 2021/08/11 20:57:48 by wjuneo-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s)
 	char	*result;
 
 	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
